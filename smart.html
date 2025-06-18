@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Smart Profile - Smart Interactions</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"  rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"> 
+    <!-- Animate.css for additional animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> 
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --dark-bg: #212529;
+            --dark-card-bg: #2c3034;
+            --dark-text: #f8f9fa;
+            --dark-border: #495057;
+            --dark-hover-bg: #343a40;
+        }
+
+        body.dark {
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
+        }
+
+        body.dark .card {
+            background-color: var(--dark-card-bg);
+            border-color: var(--dark-border);
+            color: var(--dark-text);
+        }
+
+        body.dark .bg-light,
+        body.dark .bg-white {
+            background-color: var(--dark-card-bg) !important;
+            color: var(--dark-text) !important;
+        }
+
+        body.dark .text-white {
+            color: var(--dark-text) !important;
+        }
+
+        body.dark #animationBox {
+            background-color: var(--dark-hover-bg);
+            border: 1px solid var(--dark-border);
+            color: var(--dark-text);
+        }
+
+        body.dark .navbar-dark {
+            background-color: #1a1e21 !important;
+        }
+
+        .theme-toggle-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        /* Hover Effects */
+        .hover-box {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            cursor: pointer;
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .hover-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: -1;
+            transform: scale(0);
+            transition: transform 0.3s ease;
+            border-radius: inherit;
+        }
+
+        .hover-box:hover {
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .hover-box:hover::before {
+            transform: scale(1);
+        }
+
+        .hover-box.bg-primary:hover {
+            background-color: #0b5ed7 !important;
+        }
+
+        .hover-box.bg-success:hover {
+            background-color: #157347 !important;
+        }
+
+        .hover-box.bg-danger:hover {
+            background-color: #bb2d3b !important;
+        }
+
+        .hover-box.bg-dark:hover {
+            background-color: #1a1e21 !important;
+        }
+
+        body.dark .hover-box::before {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        body.dark .hover-box:hover {
+            filter: brightness(1.15);
+        }
+
+        #animationBox {
+            transition: all 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Responsive Bootstrap Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">My Smart Profile</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="portfolio.html">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="fun.html">Fun</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="smart.html">Smart</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Theme Toggle Button -->
+    <button id="themeToggle" class="theme-toggle-btn btn btn-primary">
+        <i class="bi bi-moon-fill"></i>
+    </button>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        <h1 class="text-center mb-5 animate__animated animate__fadeIn">Smart Interactions</h1>
+
+        <!-- Personalized Greeting Section -->
+        <div class="card mb-4 shadow animate__animated animate__fadeInUp">
+            <div class="card-header bg-info text-white">
+                <h3 class="mb-0">Live Greeting</h3>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label for="nameInput" class="form-label">Enter your name:</label>
+                    <input type="text" class="form-control" id="nameInput" placeholder="Type your name here">
+                </div>
+                <div id="greetingOutput" class="alert alert-success" style="display: none;">
+                    Hello there, <span id="userName"></span>! Welcome to my smart interactions page!
+                </div>
+            </div>
+        </div>
+
+        <!-- Hover Effects Section -->
+        <div class="card mb-4 shadow animate__animated animate__fadeInUp animate__delay-1s">
+            <div class="card-header bg-warning text-dark">
+                <h3 class="mb-0">Hover Effects</h3>
+            </div>
+            <div class="card-body">
+                <p>Hover over the boxes below to see interactive effects:</p>
+                <div class="d-flex gap-3 flex-wrap">
+                    <div class="hover-box p-3 rounded bg-primary text-white">Primary</div>
+                    <div class="hover-box p-3 rounded bg-success text-white">Success</div>
+                    <div class="hover-box p-3 rounded bg-danger text-white">Danger</div>
+                    <div class="hover-box p-3 rounded bg-dark text-white">Dark</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Animation Section -->
+        <div class="card shadow animate__animated animate__fadeInUp animate__delay-2s">
+            <div class="card-header bg-success text-white">
+                <h3 class="mb-0">Click Animations</h3>
+            </div>
+            <div class="card-body">
+                <p>Click the buttons to animate the box:</p>
+                <div class="d-flex gap-2 mb-3 flex-wrap">
+                    <button id="bounceBtn" class="btn btn-outline-primary">Bounce</button>
+                    <button id="fadeBtn" class="btn btn-outline-primary">Fade</button>
+                    <button id="slideBtn" class="btn btn-outline-primary">Slide</button>
+                    <button id="rotateBtn" class="btn btn-outline-primary">Rotate</button>
+                    <button id="resetBtn" class="btn btn-outline-danger">Reset</button>
+                </div>
+                <div id="animationBox" class="p-5 bg-light rounded text-center">
+                    <h4>Watch me move!</h4>
+                    <p>Click the buttons above to trigger animations</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container">
+            <p>&copy; 2023 My Smart Profile. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> 
+
+    <!-- Custom JS -->
+    <script>
+        $(document).ready(function() {
+            // Theme Toggle Functionality
+            $('#themeToggle').click(function() {
+                $('body').toggleClass('dark');
+                localStorage.setItem('darkMode', $('body').hasClass('dark'));
+                if ($('body').hasClass('dark')) {
+                    $(this).html('<i class="bi bi-sun-fill"></i>');
+                } else {
+                    $(this).html('<i class="bi bi-moon-fill"></i>');
+                }
+            });
+
+            // Check for saved theme preference
+            if (localStorage.getItem('darkMode') === 'true') {
+                $('body').addClass('dark');
+                $('#themeToggle').html('<i class="bi bi-sun-fill"></i>');
+            }
+
+            // Personalized Greeting
+            $('#nameInput').on('input', function() {
+                const name = $(this).val().trim();
+                if (name) {
+                    $('#userName').text(name);
+                    $('#greetingOutput').fadeIn();
+                } else {
+                    $('#greetingOutput').fadeOut();
+                }
+            });
+
+            // Animation Buttons
+            $('#bounceBtn').click(function() {
+                $('#animationBox').removeClass().addClass('animate__animated animate__bounce');
+            });
+            $('#fadeBtn').click(function() {
+                $('#animationBox').removeClass().addClass('animate__animated animate__fadeOut');
+                setTimeout(() => {
+                    $('#animationBox').removeClass().addClass('animate__animated animate__fadeIn');
+                }, 1000);
+            });
+            $('#slideBtn').click(function() {
+                $('#animationBox').removeClass().addClass('animate__animated animate__slideInLeft');
+                setTimeout(() => {
+                    $('#animationBox').removeClass().addClass('animate__animated animate__slideInRight');
+                }, 1000);
+            });
+            $('#rotateBtn').click(function() {
+                $('#animationBox').removeClass().addClass('animate__animated animate__rotateIn');
+            });
+            $('#resetBtn').click(function() {
+                $('#animationBox').removeClass();
+            });
+        });
+    </script>
+</body>
+</html>
