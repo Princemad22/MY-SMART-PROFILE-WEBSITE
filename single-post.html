@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>عن ORCA Truck Parts - قطع غيار الشاحنات</title>
+  <title>أفضل قطع الغيار لتحسين أداء شاحنتك - ORCA Truck Parts</title>
 
   <!-- Bootstrap CSS RTL -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet"/>
@@ -52,11 +52,11 @@
       padding: 80px 0;
     }
 
-    .about-hero {
+    .post-hero {
       position: relative;
       height: 400px;
       overflow: hidden;
-      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/truck-about-hero.jpg') center/cover no-repeat;
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/blog1.jpg') center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -64,57 +64,89 @@
       color: white;
     }
 
-    .about-hero h1 {
-      font-size: 3rem;
+    .post-hero h1 {
+      font-size: 2.5rem;
       font-weight: bold;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     }
 
-    .about-hero p {
-      font-size: 1.2rem;
+    .post-hero p {
+      font-size: 1.1rem;
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
     }
 
-    .about-content {
+    .post-content {
       background-color: var(--light-gray);
     }
 
-    body.dark .about-content {
+    body.dark .post-content {
       background-color: var(--dark-bg);
     }
 
-    .mission-vision-section {
-      background: linear-gradient(135deg, var(--metal-gray), var(--dark-metal));
+    .post-body {
+      background: white;
+      border-radius: 10px;
+      padding: 40px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    body.dark .post-body {
+      background: var(--dark-card-bg);
+    }
+
+    .category-tag {
+      display: inline-block;
+      background-color: var(--orca-blue);
       color: white;
-      padding: 60px 0;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-bottom: 10px;
     }
 
-    .timeline-section {
-      padding: 80px 0;
-      background-color: var(--light-gray);
+    .author-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
     }
 
-    body.dark .timeline-section {
-      background-color: var(--dark-bg);
-    }
-
-    .timeline-item {
-      position: relative;
-      padding: 20px 0;
-      margin-bottom: 30px;
-      border-left: 3px solid var(--orca-blue);
-      padding-left: 30px;
-    }
-
-    .timeline-item:before {
-      content: '';
-      position: absolute;
-      width: 20px;
-      height: 20px;
+    .author-avatar {
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
-      background: var(--orca-blue);
-      left: -12px;
-      top: 25px;
+      object-fit: cover;
+    }
+
+    .social-share {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .share-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--orca-blue);
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .share-btn:hover {
+      transform: translateY(-3px);
+      background-color: #0056b3;
+    }
+
+    .related-posts {
+      margin-top: 50px;
+    }
+
+    .comment-form {
+      margin-top: 50px;
     }
 
     .theme-toggle-btn {
@@ -179,7 +211,7 @@
     }
 
     @media (max-width: 768px) {
-      .about-hero h1 {
+      .post-hero h1 {
         font-size: 2rem;
       }
 
@@ -208,10 +240,10 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav me-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
-          <li class="nav-item"><a class="nav-link active" href="about.html">عن الشركة</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">عن الشركة</a></li>
           <li class="nav-item"><a class="nav-link" href="#">المنتجات</a></li>
           <li class="nav-item"><a class="nav-link" href="#">الموردون</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">الأخبار</a></li>
+          <li class="nav-item"><a class="nav-link active" href="news.html">الأخبار</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">اتصل بنا</a></li>
         </ul>
         <ul class="navbar-nav ms-auto">
@@ -234,116 +266,103 @@
   </button>
 
   <!-- Hero Section -->
-  <section class="about-hero">
+  <section class="post-hero">
     <div class="container">
-      <h1>عن شركة ORCA Truck Parts</h1>
-      <p>قوة في كل قطعة - جودة في كل تفاصيل</p>
+      <h1>أفضل قطع الغيار لتحسين أداء شاحنتك</h1>
+      <p class="mt-3">25 يناير 2026 | تقنيات جديدة</p>
     </div>
   </section>
 
-  <!-- About Content -->
-  <section class="about-content section-padding">
-    <div class="container">
-      <div class="row align-items-center mb-5">
-        <div class="col-lg-6">
-          <h2 class="mb-4">من نحن</h2>
-          <p class="lead">تُعد شركة ORCA Truck Parts إحدى الشركات الرائدة في مجال توريد قطع غيار الشاحنات التجارية في المنطقة، حيث نسعى جاهدين لتقديم أفضل المنتجات والخدمات لعملائنا الكرام.</p>
-          <p>تأسست شركتنا عام 2010 بهدف توفير قطع غيار أصلية وعالية الجودة لجميع أنواع الشاحنات التجارية، مع التركيز على رضا العملاء والجودة العالية والأسعار التنافسية. نحن نعمل مع كبار المصنعين العالميين لنضمن حصول عملائنا على أفضل المنتجات المتاحة في السوق.</p>
-          <p>تمتلك شركتنا فريق عمل مؤهل وذو خبرة طويلة في هذا المجال، مما يتيح لنا تقديم خدمات استشارية متميزة لعملائنا ومساعدتهم في اختيار أفضل قطع الغيار المناسبة لاحتياجاتهم.</p>
-        </div>
-        <div class="col-lg-6">
-          <img src="images/truck-about.jpg" alt="Truck Parts Warehouse" class="img-fluid rounded shadow">
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <div class="card h-100 p-4 text-center">
-            <i class="bi bi-eye service-icon" style="font-size: 3rem; color: var(--orca-blue); margin-bottom: 20px;"></i>
-            <h4>رؤيتنا</h4>
-            <p>أن نكون الخيار الأول للعملاء في مجال توريد قطع غيار الشاحنات، من خلال تقديم منتجات وخدمات عالية الجودة تفوق توقعاتهم.</p>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card h-100 p-4 text-center">
-            <i class="bi bi-bullseye service-icon" style="font-size: 3rem; color: var(--orca-blue); margin-bottom: 20px;"></i>
-            <h4>رسالتنا</h4>
-            <p>توفير قطع غيار موثوقة وعالية الجودة لضمان استمرارية عمل عملائنا وزيادة كفاءة أسطولهم.</p>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="card h-100 p-4 text-center">
-            <i class="bi bi-heart service-icon" style="font-size: 3rem; color: var(--orca-blue); margin-bottom: 20px;"></i>
-            <h4>قيمنا</h4>
-            <p>الجودة، الابتكار، الشفافية، والالتزام تجاه عملائنا، موظفينا، وشركائنا في النجاح.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Mission Vision Section -->
-  <section class="mission-vision-section">
+  <!-- Post Content -->
+  <section class="post-content section-padding">
     <div class="container">
       <div class="row">
-        <div class="col-lg-6 mb-4 mb-lg-0">
-          <h3 class="mb-4">الرؤية والرسالة</h3>
-          <p class="lead">نؤمن أن النجاح الحقيقي يكمن في بناء علاقات طويلة الأمد مع عملائنا، وتقديم منتجات تفوق توقعاتهم، وخدمة المجتمع الذي نعمل فيه.</p>
-          <p>نعمل باستمرار على تطوير أنفسنا وتوسيع نطاق خدماتنا لتلبية احتياجات السوق المتغيرة، مع الحفاظ على أعلى معايير الجودة والخدمة.</p>
-        </div>
-        <div class="col-lg-6">
-          <h3 class="mb-4">نقاط تميز ORCA</h3>
-          <ul class="list-unstyled">
-            <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> خبرة تزيد عن 15 عامًا في مجال قطع غيار الشاحنات</li>
-            <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> شراكات استراتيجية مع كبار المصنعين العالميين</li>
-            <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> فريق فني مؤهل وذو خبرة عالية</li>
-            <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> مخزون واسع من قطع الغيار المتوفرة فورًا</li>
-            <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> خدمات ما بعد البيع المتكاملة</li>
-            <li class="mb-3"><i class="bi bi-check-circle-fill text-success me-2"></i> توصيل سريع لجميع أنحاء المملكة</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Timeline Section -->
-  <section class="timeline-section">
-    <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="mb-3">مخطط تطور الشركة</h2>
-        <p class="lead">الخطوات المهمة في رحلة نجاح ORCA Truck Parts</p>
-      </div>
-      
-      <div class="row">
-        <div class="col-12">
-          <div class="timeline-item">
-            <h4>2010 - التأسيس</h4>
-            <p>تم تأسيس شركة ORCA Truck Parts برؤية واضحة لتوفير قطع غيار عالية الجودة لقطاع الشاحنات في المنطقة.</p>
+        <div class="col-lg-8 mx-auto">
+          <div class="post-body">
+            <span class="category-tag">تقنيات جديدة</span>
+            
+            <div class="author-info mb-4">
+              <img src="images/author.jpg" alt="Author" class="author-avatar">
+              <div>
+                <h6 class="mb-0">أحمد محمد</h6>
+                <p class="mb-0 text-muted">محلل تقني في ORCA Truck Parts</p>
+              </div>
+            </div>
+            
+            <p class="lead">في هذا المقال نستعرض أفضل قطع الغيار التي يمكن أن تحسن من أداء شاحنتك وتجعلها أكثر كفاءة في استهلاك الوقود.</p>
+            
+            <h3>مقدمة</h3>
+            <p>تعتبر شاحنات النقل من أهم وسائل النقل في العالم، وتحتاج إلى صيانة دورية وتحديث لقطع الغيار باستمرار للحفاظ على أدائها العالي. في هذا المقال، سنلقي الضوء على أهم قطع الغيار التي يجب الانتباه إليها لتحسين أداء الشاحنة.</p>
+            
+            <h3>المرشحات</h3>
+            <p>المرشحات هي من أهم قطع الغيار التي يجب تبديلها بانتظام، حيث تساعد في حماية المحرك من الأوساخ والغبار، مما يحسن من كفاءته ويقلل من استهلاك الوقود.</p>
+            
+            <h3>نظام العادم</h3>
+            <p>نظام العادم المتطور يساعد في تحسين كفاءة المحرك وتقليل الانبعاثات الضارة، وهو من الأجزاء التي لا يجب التفريط فيها.</p>
+            
+            <h3>نظام التعليق</h3>
+            <p>نظام التعليق الجيد يوفر راحة أكبر أثناء القيادة ويحمي الشاحنة من الاهتزازات القوية، مما يزيد من عمرها الافتراضي.</p>
+            
+            <h3>ال conclusion</h3>
+            <p>باستخدام قطع الغيار المناسبة والجيدة، يمكنك تحسين أداء شاحنتك بشكل كبير، وزيادة كفاءتها وعمرها الافتراضي. ننصح دائمًا باستخدام قطع غيار أصلية من مصادر موثوقة.</p>
+            
+            <div class="social-share">
+              <a href="#" class="share-btn"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="share-btn"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="share-btn"><i class="bi bi-whatsapp"></i></a>
+              <a href="#" class="share-btn"><i class="bi bi-telegram"></i></a>
+            </div>
+            
+            <!-- Comments Section -->
+            <div class="comment-form mt-5">
+              <h4>اترك تعليقك</h4>
+              <form>
+                <div class="row">
+                  <div class="col-md-6">
+                    <input type="text" class="form-control mb-3" placeholder="الاسم">
+                  </div>
+                  <div class="col-md-6">
+                    <input type="email" class="form-control mb-3" placeholder="البريد الإلكتروني">
+                  </div>
+                </div>
+                <textarea class="form-control mb-3" rows="5" placeholder="تعليقك"></textarea>
+                <button type="submit" class="btn btn-primary">إرسال التعليق</button>
+              </form>
+            </div>
           </div>
           
-          <div class="timeline-item">
-            <h4>2013 - التوسع</h4>
-            <p>تم توسيع نطاق العمليات وفتح مخازن جديدة لتحسين سرعة التوصيل وجودة الخدمة.</p>
-          </div>
-          
-          <div class="timeline-item">
-            <h4>2016 - الشراكات الدولية</h4>
-            <p>تم توقيع أولى الشراكات مع كبار مصنعي قطع الغيار في أوروبا وآسيا.</p>
-          </div>
-          
-          <div class="timeline-item">
-            <h4>2019 - التحول الرقمي</h4>
-            <p>تم إطلاق أول منصة إلكترونية لتسهيل عملية طلب قطع الغيار وتعقب الطلبات.</p>
-          </div>
-          
-          <div class="timeline-item">
-            <h4>2022 - المركز اللوجستي</h4>
-            <p>تم افتتاح المركز اللوجستي الحديث الذي يغطي جميع أنحاء المملكة.</p>
-          </div>
-          
-          <div class="timeline-item">
-            <h4>2024 - التوسع الإقليمي</h4>
-            <p>بدأنا خطوات التوسع إلى الأسواق الإقليمية المجاورة.</p>
+          <!-- Related Posts -->
+          <div class="related-posts">
+            <h4>مقالات مشابهة</h4>
+            <div class="row">
+              <div class="col-md-4 mb-3">
+                <div class="card">
+                  <img src="images/blog2.jpg" alt="Related Post" class="card-img-top" style="height: 150px; object-fit: cover;">
+                  <div class="card-body">
+                    <h6 class="card-title">نصائح للعناية بشاحنتك في الشتاء</h6>
+                    <a href="#" class="btn btn-sm btn-outline-primary">قراءة المزيد</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <div class="card">
+                  <img src="images/blog3.jpg" alt="Related Post" class="card-img-top" style="height: 150px; object-fit: cover;">
+                  <div class="card-body">
+                    <h6 class="card-title">السوق العالمية لقطع غيار الشاحنات</h6>
+                    <a href="#" class="btn btn-sm btn-outline-primary">قراءة المزيد</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <div class="card">
+                  <img src="images/blog4.jpg" alt="Related Post" class="card-img-top" style="height: 150px; object-fit: cover;">
+                  <div class="card-body">
+                    <h6 class="card-title">ابتكارات جديدة في قطع غيار الشاحنات</h6>
+                    <a href="#" class="btn btn-sm btn-outline-primary">قراءة المزيد</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -356,7 +375,7 @@
       <div class="row">
         <div class="col-lg-4 mb-4">
           <h4>ORCA Truck Parts</h4>
-          <p>شركة رائدة في توريد قطع غيار الشاحنات عالية الجودة منذ أكثر من 15 عامًا.</p>
+          <p>شركة رائدة في توريق قطع غيار الشاحنات العالية الجودة منذ أكثر من 15 عامًا.</p>
           <div class="mt-3">
             <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
             <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
@@ -370,7 +389,8 @@
             <li><a href="index.html" class="text-white">الرئيسية</a></li>
             <li><a href="about.html" class="text-white">عن الشركة</a></li>
             <li><a href="#" class="text-white">المنتجات</a></li>
-            <li><a href="#" class="text-white">الأخبار</a></li>
+            <li><a href="#" class="text-white">الموردون</a></li>
+            <li><a href="news.html" class="text-white">الأخبار</a></li>
             <li><a href="contact.html" class="text-white">اتصل بنا</a></li>
           </ul>
         </div>
@@ -384,7 +404,7 @@
         </div>
         <div class="col-lg-3 col-md-6 mb-4">
           <h4>النشرة البريدية</h4>
-          <p>اشترك للحصول على آخر التحديثات والعروض الحصرية</p>
+          <p>اشترك للحصول على آخر العروض والتحديثات</p>
           <div class="input-group">
             <input type="email" class="form-control" placeholder="بريدك الإلكتروني">
             <button class="btn btn-primary" type="button">اشتراك</button>
